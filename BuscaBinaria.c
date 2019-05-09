@@ -37,11 +37,11 @@ int main(int argc, char** argv) {
         cont++;
         meio = (primeiro+ultimo)/2;
         
-        //Apontar a cabeça de leitura para o meio do arquivo e ler a qtd de bytes de uma linha:
+        //Apontar a cabeÃ§a de leitura para o meio do arquivo e ler a qtd de bytes de uma linha:
         fseek(f, meio*sizeof(Endereco), SEEK_SET);
         fread(&e,sizeof(Endereco),1,f);
         
-        //(atrncmp) é uma função que compara strings byte a byte:
+        //(atrncmp) Ã© uma funÃ§Ã£o que compara caracteres de duas strings:
         if(strncmp(argv[1],e.cep,8) == 0) {		
 			printf("%.72s\n%.72s\n%.72s\n%.72s\n%.2s\n%.8s\n",e.logradouro,e.bairro,e.cidade,e.uf,e.sigla,e.cep);
 			break;	
